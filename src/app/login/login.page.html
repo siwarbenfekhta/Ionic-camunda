@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form action="" method="post" name="forms" [formGroup]="forms">
+    <div class="email-login">
+      <p>Login with your username</p>
+      <div class="formfield">
+        <input type="text" name="email" id="email" formControlName = "login" [(ngModel)] ="username">
+        <label for="email" placeholder="Email">Login</label>
+        <span *ngIf="error" style="color: red;">login or password incorrect</span>
+      </div>
+      <div class="formfield">
+        <input type="password" name="password" id="password" formControlName = "password" [(ngModel)] ="pass">
+        <label for="password" placeholder="Password">Password</label>
+        <span *ngIf="error" style="color: red;">login or password incorrect</span>
+      </div>
+      <div class="other-links">
+        <div class="remember-me">
+          <ion-checkbox (ionChange)="checkboxClick($event)"></ion-checkbox>
+          <p>Remember me</p>
+        </div>
+      </div>
+    </div>
+    <div class="login-button">
+      <ion-button class="login" (click)="OnCreate()">Login</ion-button>
+    </div>
+  </form>
+
+</ion-content>

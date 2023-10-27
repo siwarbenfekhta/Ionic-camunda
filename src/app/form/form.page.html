@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form action="" method="post" name="forms" [formGroup]="forms">
+  <div class="email-login">
+    <div class="formfield"  *ngFor="let item of form | keyvalue">
+      <input type={{item.value.type}} formControlName={{item.key}}  name={{item.key}}  id={{item.key}}>
+      <label>{{item.key}}</label>
+    </div>
+    <div class="login-button" >
+      <ion-button class="login" type="submit"  (click)="OnCreate()" >Déposer</ion-button>
+    </div>
+  </div>
+  </form>
+
+</ion-content>

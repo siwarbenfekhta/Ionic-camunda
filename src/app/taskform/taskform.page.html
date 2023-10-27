@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Taskform</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form action="" method="post" name="forms" [formGroup]="forms" >
+<div class="email-login">
+  <div class="formfield"  *ngFor="let item of form2 | keyvalue">
+   <input  name={{item.key}}  id={{item.key}} value={{item.value.value}}  *ngIf="item.key !== 'valid' && item.key !== 'justificatif'" >
+    <label *ngIf="item.key != 'valid'">{{item.key}}</label>
+  </div>
+  <div class="formfield" *ngIf="show1">
+  <input type="text" name=justificatif [(ngModel)]="justificatif" [ngModelOptions]="{standalone: true}" >
+  <label>justificatif</label>
+</div>
+  <div style="text-align: left ; margin-left : 7%;" *ngIf="show2">
+    <p>valid</p><ion-checkbox (ionChange)="checkboxClick($event)"></ion-checkbox>
+    </div>
+
+  <div class="login-button" >
+    <ion-button class="login" type="submit"  (click)="OnCreate()" >Complete task</ion-button>
+  </div>
+</div>
+</form>
+
+
+</ion-content>

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { TasklistPageRoutingModule } from './tasklist-routing.module';
 
-import { HomePage } from './home.page';
+import { TasklistPage } from './tasklist.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    TasklistPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [TasklistPage]
 })
-export class HomePageModule {}
+export class TasklistPageModule {}
